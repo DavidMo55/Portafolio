@@ -1,0 +1,19 @@
+<header class="header">
+  <nav class="nav">
+    <!-- Logo -->
+    <a routerLink="/" class="logo">Angel David Morales Cuenca</a>
+
+    <!-- Botón menú (solo móvil) -->
+    <button class="menu-toggle" (click)="toggleMenu()">
+      ☰
+    </button>
+
+    <!-- Links -->
+    <ul class="nav-links" [class.active]="isMenuOpen">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/certifiaciones">Certifiaciones</a></li>
+      <li><a routerLink="/projects">Proyectos</a></li>
+      <li><a routerLink="/contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
