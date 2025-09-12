@@ -1,48 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+/* Reset basic styles for all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Styles for images */
 img {
   max-width: 100%;
   display: block;
 }
 
+/* Consolidated and Corrected Body Styles */
 body {
   margin: 0;
-  height: 100vh;
+  /* Use a single display: flex and flex-direction to control the layout */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: radial-gradient(circle at 30% 20%, #3e3d48 0%, transparent 40%),
+  flex-direction: column;
+  min-height: 100vh;
+
+  /* Your gradient background styles */
+  background: radial-gradient(circle at 30% 20%, #ffffff 0%, transparent 40%),
               radial-gradient(circle at 70% 20%, #8a9ebe 0%, transparent 40%),
               radial-gradient(circle at 30% 70%, #fdfd96 0%, transparent 40%),
               radial-gradient(circle at 70% 80%, #ea8a9c 0%, transparent 40%),
               #f3f7ff;
   background-size: cover;
   background-attachment: fixed;
+
+  /* Your font styles */
+  font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
+/* Styles for code and preformatted text */
+code, pre {
+  font-family: 'Geist Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-
-}
-
+/* Styles for Angular's root component */
 app-root {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
+/* Main content area */
 main {
-  flex: 1; /* el contenido ocupa el espacio y empuja el footer */
+  flex: 1; /* This will make the main content push the footer down */
+  /* Add alignment for the content inside main */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
