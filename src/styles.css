@@ -1,11 +1,11 @@
-/* Reset basic styles for all elements */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Styles for images */
+
 img {
   max-width: 100%;
   display: block;
@@ -13,42 +13,42 @@ img {
 
 /* Consolidated and Corrected Body Styles */
 body {
-  margin: 0;
-  /* Use a single display: flex and flex-direction to control the layout */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: 0;
 
-  /* Your gradient background styles */
-  background: radial-gradient(circle at 30% 20%, #ffffff 0%, transparent 40%),
-              radial-gradient(circle at 70% 20%, #8a9ebe 0%, transparent 40%),
-              radial-gradient(circle at 30% 70%, #fdfd96 0%, transparent 40%),
-              radial-gradient(circle at 70% 80%, #ea8a9c 0%, transparent 40%),
-              #f3f7ff;
+  /* fondo */
+  background: 
+              #ffffff;
   background-size: cover;
   background-attachment: fixed;
 
-  /* Your font styles */
   font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Styles for code and preformatted text */
-code, pre {
-  font-family: 'Geist Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
-
-/* Styles for Angular's root component */
 app-root {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-/* Main content area */
 main {
-  flex: 1; /* This will make the main content push the footer down */
-  /* Add alignment for the content inside main */
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 80px; /* controla la separación entre secciones */
+  padding: 60px 20px; /* agrega espacio general */
+  width: 100%;
+}
+
+footer {
+  margin-top: auto;
+}
+
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* ✅ elimina scroll horizontal */
 }
