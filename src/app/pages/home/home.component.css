@@ -132,7 +132,7 @@
 
 @media screen and (max-width: 768px) {
     .hero-section {
-        margin-top: 80px;
+        margin-top: 50px;
         font-size: 1.3em;
         padding: 0 15px;
     }
@@ -182,7 +182,7 @@
     }
 
     .hero-section {
-        margin-top: 90px;
+        margin-top: 50px;
         font-size: 1.1em;
         padding: 0 10px;
     }
