@@ -1,0 +1,130 @@
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #004d40;
+}
+
+.projects-container {
+    width: 80%;
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+
+.project-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+    padding: 2rem;
+
+    border-radius: 8px;
+   
+}
+
+.project-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-info {
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.project-card.reverse .project-info {
+    margin-right: 0;
+    
+}
+
+.project-info h2 {
+    font-size: 2rem;
+    color: #00796b;
+    margin-bottom: 1rem;
+}
+
+.project-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.btn-visit {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #00796b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-visit:hover {
+    background-color: #004d40;
+}
+
+/* Estilos de las imágenes */
+.project-image-container {
+    position: relative;
+    flex-basis: 40%;
+    min-width: 300px;
+}
+
+.desktop-image {
+    width: 100%;
+    height: auto;
+    height: auto;
+   
+}
+
+
+
+/* Media Queries para diseño responsivo */
+@media (max-width: 768px) {
+    .projects-container {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 2rem;
+        padding: 1rem;
+    }
+
+    .project-card.reverse {
+        flex-direction: column;
+    }
+
+    .project-info {
+        margin: 0 0 1.5rem 0;
+    }
+
+    .project-card.reverse .project-info {
+        margin: 0 0 1.5rem 0;
+    }
+
+    .project-image-container {
+        flex-basis: auto;
+        width: 100%;
+        min-width: unset;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        margin-top: 1.5rem;
+    }
+
+    .desktop-image {
+        width: 80%;
+    }
+
+    .mobile-image {
+        position: static;
+        margin-top: -50px;
+        z-index: 10;
+        width: 40%;
+        max-width: 150px;
+    }
+}
