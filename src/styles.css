@@ -52,3 +52,35 @@ html, body {
   width: 100%;
   overflow-x: hidden; /* ✅ elimina scroll horizontal */
 }
+
+
+.animate-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.before-animate.animate-left {
+  transform: translateX(-40px);
+}
+
+.animate-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.before-animate.animate-right {
+  transform: translateX(40px);
+}
+
+
+.before-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
