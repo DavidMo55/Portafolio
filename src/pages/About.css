@@ -1,0 +1,167 @@
+.about {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.7;
+  color: #20493c;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 20px;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-header {
+  width: 100%;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.about-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #20493c;
+}
+
+.about-header p {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #506d64;
+}
+
+.about-header a {
+  color: #20493c;
+  text-decoration: none;
+  margin: 0 8px;
+  font-size: 0.95rem;
+}
+
+.about-section {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.about-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #20493c;
+}
+
+.job {
+  margin-bottom: 25px;
+}
+
+.job-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.job-header h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #20493c;
+}
+
+.job-header span {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.skills {
+  text-align: center;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.skills-carousel {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.skills-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.skills-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 15px;
+  justify-items: center;
+  align-items: center;
+}
+
+.skills-track img {
+  height: 50px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.skills-track img:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .skills-track {
+    animation: none;
+    gap: 15px;
+  }
+
+  .skills-track img {
+    height: 40px;
+  }
+
+  .about {
+    padding: 40px 15px;
+    font-size: 18px;
+  }
+
+  .about-header h1 {
+    font-size: 2rem;
+  }
+
+  .about-header p {
+    font-size: 1rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .job-header h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 30px 10px;
+    font-size: 16px;
+  }
+
+  .about-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .about-header p {
+    font-size: 0.95rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .job-header h3 {
+    font-size: 0.95rem;
+  }
+
+  .job-header span {
+    white-space: normal;
+  }
+}
