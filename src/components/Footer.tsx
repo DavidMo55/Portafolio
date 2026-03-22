@@ -16,7 +16,7 @@ export default function Footer() {
         </ul>
 
         <div className="footer-socials">
-          <a href="https://github.com/Cocoyanami" target="_blank" rel="noreferrer"><img src="/github.png" alt="Github" className="icono1" /></a>
+          <a href="https://github.com/DavidMo55" target="_blank" rel="noreferrer"><img src="/github.png" alt="Github" className="icono1" /></a>
           <a href="mailto:angeldavidmc20001@gmail.com" target="_blank" rel="noreferrer"><img src="/gmail.png" alt="Gmail" className="icono" /></a>
           <a href="https://www.linkedin.com/in/moralesdavidcoco/" target="_blank" rel="noreferrer"><img src="/ind.png" alt="Linkedin" className="icono" /></a>
           <a href="https://wa.me/527751339753" target="_blank" rel="noreferrer"><img src="/whatsapp--v2.png" alt="WhatsApp" className="icono4" /></a>

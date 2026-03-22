@@ -6,12 +6,27 @@
   font-weight: 700;
 }
 
+.categoria-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.categoria-titulo {
+  font-size: 1.6rem;
+  color: #00796b;
+  padding: 0 2rem;
+  margin-bottom: 0.5rem;
+  border-left: 4px solid #00796b;
+  padding-left: 1rem;
+}
+
 .certificados-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1.5rem;
   justify-content: center;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -130,6 +145,10 @@
   .titulo {
     font-size: 2rem;
   }
+  .categoria-titulo {
+    font-size: 1.3rem;
+    padding: 0 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -158,5 +177,8 @@
   .titulo {
     font-size: 1.5rem;
     margin-top: 0.5rem;
+  }
+  .categoria-titulo {
+    font-size: 1.1rem;
   }
 }

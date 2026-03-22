@@ -1,132 +1,167 @@
-.contact-container {
-  display: flex;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 1000px;
-  overflow: hidden;
-  margin: 0 auto;
+/* ── Hero ── */
+.contact-hero {
+  text-align: center;
+  max-width: 600px;
 }
 
-.iconos-container {
+.contact-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #20493c;
+  margin-bottom: 16px;
+}
+
+.contact-hero p {
+  font-size: 1.1rem;
+  color: #506961;
+  line-height: 1.7;
+}
+
+/* ── Contact cards ── */
+.contact-methods {
   display: flex;
-  gap: 15px;
-  margin-top: 1.5rem;
-  justify-content: center;
+  gap: 24px;
   flex-wrap: wrap;
+  justify-content: center;
+  max-width: 900px;
+  width: 100%;
 }
 
-.contact-container .icono {
-  width: 50px;
-  height: 50px;
-  transition: transform 0.3s;
-}
-
-.contact-container .icono:hover {
-  transform: scale(1.1);
-}
-
-.contact-info {
-  flex: 1;
-  background-color: #f0f3f5;
-  padding: 3rem;
+.contact-card {
+  flex: 1 1 240px;
+  max-width: 280px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  text-decoration: none;
+  color: #20493c;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
-.contact-info h2 {
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #20493c;
-  margin-bottom: 2rem;
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
 }
 
-.info-item {
+.contact-card-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 4px;
   display: flex;
   align-items: center;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.info-item i {
-  font-size: 1.5rem;
-  color: #20493c;
-  margin-right: 1.5rem;
-}
-
-.info-item h3 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #20493c;
+.contact-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #00796b;
   margin: 0;
 }
 
-.info-item p,
-.info-item a {
-  font-size: 1rem;
-  color: #506d64;
-  margin: 0.25rem 0 0;
+.contact-card p {
+  font-size: 0.9rem;
+  color: #506961;
+  margin: 0;
   word-break: break-word;
 }
 
-@media (max-width: 992px) {
-  .contact-info {
-    padding: 2.5rem;
-  }
-
-  .contact-info h2 {
-    font-size: 1.8rem;
-  }
-
-  .info-item h3 {
-    font-size: 1.1rem;
-  }
+/* ── Socials ── */
+.contact-socials {
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
 }
 
+.contact-socials h2 {
+  font-size: 1.4rem;
+  color: #20493c;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  padding: 16px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: #20493c;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.social-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.social-card img {
+  width: 28px;
+  height: 28px;
+}
+
+/* ── Responsive ── */
 @media (max-width: 768px) {
-  .contact-container {
+  .contact-hero h1 {
+    font-size: 2rem;
+  }
+
+  .contact-hero p {
+    font-size: 1rem;
+  }
+
+  .contact-methods {
     flex-direction: column;
+    align-items: center;
   }
 
-  .contact-info {
-    padding: 2rem;
+  .contact-card {
+    max-width: 360px;
+    width: 100%;
   }
 
-  .contact-info h2 {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-
-  .info-item {
+  .social-links {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
-  .iconos-container {
+  .social-card {
+    width: 200px;
     justify-content: center;
-  }
-
-  .contact-container .icono {
-    width: 45px;
-    height: 45px;
   }
 }
 
 @media (max-width: 480px) {
-  .contact-info {
-    padding: 1.5rem;
+  .contact-hero h1 {
+    font-size: 1.6rem;
   }
 
-  .contact-info h2 {
-    font-size: 1.4rem;
+  .contact-hero p {
+    font-size: 0.9rem;
   }
 
-  .info-item h3 {
-    font-size: 1rem;
+  .contact-card {
+    padding: 24px 18px;
   }
 
-  .contact-container .icono {
+  .contact-card-icon {
     width: 40px;
     height: 40px;
   }
