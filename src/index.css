@@ -45,31 +45,50 @@ html, body {
   overflow-x: hidden;
 }
 
-.animate-left {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.before-animate.animate-left {
-  transform: translateX(-40px);
-}
-
-.animate-right {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.before-animate.animate-right {
-  transform: translateX(40px);
-}
-
-.before-animate {
+/* ── Scroll Animations ── */
+.anim {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease-out;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 
-.animate {
+.anim-show {
   opacity: 1;
   transform: translateY(0);
 }
+
+.anim-left {
+  transform: translateX(-40px) translateY(0);
+}
+
+.anim-left.anim-show {
+  transform: translateX(0) translateY(0);
+}
+
+.anim-right {
+  transform: translateX(40px) translateY(0);
+}
+
+.anim-right.anim-show {
+  transform: translateX(0) translateY(0);
+}
+
+.anim-scale {
+  transform: scale(0.92);
+  opacity: 0;
+}
+
+.anim-scale.anim-show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Stagger delays via CSS custom property */
+.anim-d1 { transition-delay: 0.1s; }
+.anim-d2 { transition-delay: 0.2s; }
+.anim-d3 { transition-delay: 0.3s; }
+.anim-d4 { transition-delay: 0.4s; }
+.anim-d5 { transition-delay: 0.5s; }
+.anim-d6 { transition-delay: 0.6s; }
+.anim-d7 { transition-delay: 0.7s; }
+.anim-d8 { transition-delay: 0.8s; }

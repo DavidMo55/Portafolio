@@ -1,3 +1,4 @@
+import { useScrollAnimate } from '../hooks/useScrollAnimate'
 import './Projects.css'
 
 const projects = [
@@ -41,17 +42,46 @@ const projects = [
     img: '/p1.png',
     tags: ['React', 'TypeScript', 'Vite', 'Firebase'],
   },
+  {
+    title: 'Romi: Sistema de Gestión de Tareas',
+    description:
+      'Herramienta de gestión de flujos de trabajo inspirada en metodologías ágiles, optimizada para latencia mínima. Backend asíncrono con FastAPI, frontend ultra rápido con Astro y modelado de estados de tareas para seguimiento en tiempo real.',
+    url: 'https://romiai.info/',
+    img: '/brevemente.png',
+    tags: ['FastAPI', 'Astro', 'PostgreSQL', 'Python'],
+  },
+  {
+    title: 'Majestic: Plataforma Administrativa Enterprise',
+    description:
+      'Sistema de gestión integral para la administración de activos y usuarios, priorizando seguridad y escalabilidad. Arquitectura basada en componentes reutilizables, sistema RBAC avanzado y optimización de consultas SQL para grandes volúmenes de datos.',
+    url: 'https://mestockexterno.com/login',
+    img: '/majestic.png',
+    tags: ['Laravel', 'Vue.js', 'MySQL', 'REST API', 'RBAC'],
+  },
+  {
+    title: 'Romi-Sepomex: Inteligencia Geográfica',
+    description:
+      'Microservicio especializado en normalización y validación de datos postales de México. Automatización de direcciones con la base de datos oficial de SEPOMEX, algoritmos de búsqueda eficiente y sistema de limpieza de datos geográficos.',
+    url: 'https://romisepomex-e6fca9badrcneabt.canadacentral-01.azurewebsites.net/docs',
+    img: '/romisepo.png',
+    tags: ['FastAPI', 'Python', 'PostgreSQL', 'SEPOMEX'],
+  },
 ]
 
 export default function Projects() {
+  const containerRef = useScrollAnimate<HTMLElement>()
+
   return (
-    <main>
-      <h1 className="projects-title">Proyectos Destacados</h1>
+    <main ref={containerRef}>
+      <h1 className="projects-title anim">Proyectos Destacados</h1>
       <div className="projects-container">
         {projects.map((project, i) => (
-          <section className={`project-card ${i % 2 !== 0 ? 'reverse' : ''}`} key={project.title}>
+          <section
+            className={`project-card anim ${i % 2 !== 0 ? 'reverse anim-right' : 'anim-left'}`}
+            key={project.title}
+          >
             <div className="project-info">
-              <span className="project-number">0{i + 1}</span>
+              <span className="project-number">{String(i + 1).padStart(2, '0')}</span>
               <h2>{project.title}</h2>
               <p>{project.description}</p>
               <div className="project-tags">

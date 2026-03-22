@@ -1,3 +1,4 @@
+import { useScrollAnimate } from '../hooks/useScrollAnimate'
 import './About.css'
 
 const skillGroups = [
@@ -23,6 +24,7 @@ const skillGroups = [
       { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg', alt: 'Express' },
       { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original-wordmark.svg', alt: 'FastAPI' },
       { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg', alt: 'Django' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg', alt: 'Laravel' },
       { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg', alt: 'Python' },
       { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg', alt: 'Java' },
       { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg', alt: 'C++' },
@@ -36,6 +38,8 @@ const skillGroups = [
       { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', alt: 'MongoDB' },
       { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', alt: 'MySQL' },
       { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg', alt: 'PostgreSQL' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg', alt: 'Prisma' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg', alt: 'Supabase' },
     ],
   },
   {
@@ -46,6 +50,8 @@ const skillGroups = [
       { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', alt: 'GitHub' },
       { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg', alt: 'GitLab' },
       { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg', alt: 'Firebase' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg', alt: 'AWS' },
+      { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg', alt: 'Vercel' },
       { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg', alt: 'Vite' },
     ],
   },
@@ -71,6 +77,28 @@ const skillGroups = [
 
 const experience = [
   {
+    role: 'Fullstack Developer',
+    company: 'Romi (Klinia)',
+    period: 'Oct 2025 – Actualidad',
+    items: [
+      'Desarrollo de un sistema de gestion de tareas de alta performance con FastAPI y Astro',
+      'Creacion del microservicio Romi-Sepomex para normalizacion de datos postales con la base oficial de SEPOMEX',
+      'Implementacion de APIs asincronas con FastAPI, PostgreSQL y Prisma para manejo eficiente de concurrencia',
+      'Despliegue en Azure y Vercel con pipelines de integracion continua',
+    ],
+  },
+  {
+    role: 'Fullstack Developer',
+    company: 'Majestic — Plataforma Administrativa Enterprise',
+    period: 'Oct 2025 – Mar 2026',
+    items: [
+      'Desarrollo de un sistema de gestion integral de activos y usuarios con Laravel y Vue.js',
+      'Implementacion de autenticacion avanzada con roles (RBAC) y control de permisos granular',
+      'Optimizacion de consultas SQL en MySQL para el manejo de grandes volumenes de registros',
+      'Integracion de APIs RESTful y despliegue con Docker para entornos de produccion',
+    ],
+  },
+  {
     role: 'Practicas Profesionales',
     company: 'INDEMUN — Gobierno del Estado de Hidalgo',
     period: 'Ene 2025 – Jun 2025',
@@ -85,9 +113,9 @@ const experience = [
     company: 'Fundacion Axio',
     period: 'Sep 2024 – Jun 2025',
     items: [
-      'Desarrollo de aplicaciones web y landing pages',
+      'Desarrollo de aplicaciones web y landing pages con React y Astro',
       'Diseno y prototipado de interfaces en Figma',
-      'Investigacion e implementacion de nuevas tecnologias',
+      'Implementacion del cuestionario SA-92 para evaluacion de cultura organizacional',
     ],
   },
   {
@@ -96,7 +124,7 @@ const experience = [
     period: 'Ene 2024 – Jul 2024',
     items: [
       'Investigacion de tecnologias emergentes en IA y redes neuronales',
-      'Desarrollo de prototipos experimentales',
+      'Desarrollo de prototipos experimentales con TensorFlow y Keras',
     ],
   },
 ]
@@ -107,43 +135,46 @@ const education = [
 ]
 
 export default function About() {
+  const containerRef = useScrollAnimate<HTMLElement>()
+
   return (
-    <main className="about">
+    <main className="about" ref={containerRef}>
       {/* Header */}
-      <section className="about-header">
+      <section className="about-header anim">
         <div className="about-header-badge">Sobre mi</div>
         <h1>Angel David Morales Cuenca</h1>
         <p className="about-tagline">Ingeniero en Software | Fullstack &amp; Cloud Developer</p>
       </section>
 
       {/* Perfil */}
-      <section className="about-section">
+      <section className="about-section anim">
         <h2>Perfil Profesional</h2>
         <div className="about-profile-grid">
-          <div className="profile-card">
+          <div className="profile-card anim anim-d1">
             <h3>Desarrollo Full-Stack</h3>
             <p>
-              Creo soluciones end-to-end: desde interfaces modernas con React y Angular,
-              hasta APIs escalables con Node.js, FastAPI y Django. Mi enfoque esta en
-              escribir codigo limpio que resuelva problemas reales.
+              Creo soluciones end-to-end: desde interfaces modernas con React, Astro y Vue.js,
+              hasta APIs de alto rendimiento con FastAPI, Laravel y Node.js. Trabajo con
+              PostgreSQL, Prisma y Supabase para arquitecturas de datos solidas.
             </p>
           </div>
-          <div className="profile-card">
-            <h3>Cloud & DevOps</h3>
+          <div className="profile-card anim anim-d2">
+            <h3>Cloud &amp; DevOps</h3>
             <p>
-              Experiencia con Google Cloud, AWS y Firebase. Uso Docker para asegurar
-              entornos de despliegue consistentes y CI/CD para entregas continuas.
+              Despliegue en AWS, Google Cloud, Azure, Firebase y Vercel. Uso Docker para
+              entornos consistentes y CI/CD para entregas continuas en produccion.
             </p>
           </div>
-          <div className="profile-card">
-            <h3>Automatizacion</h3>
+          <div className="profile-card anim anim-d3">
+            <h3>Backend &amp; Microservicios</h3>
             <p>
-              Me apasiona optimizar procesos. En INDEMUN logre una reduccion del 30%
-              en tiempos de ejecucion automatizando flujos de trabajo con Python y SQL.
+              Diseno y desarrollo de APIs REST y asincronas con FastAPI, Laravel y Node.js.
+              Experiencia construyendo microservicios independientes como modulos de
+              validacion geografica, sistemas RBAC y pipelines de procesamiento de datos.
             </p>
           </div>
-          <div className="profile-card">
-            <h3>Diseno & UX</h3>
+          <div className="profile-card anim anim-d4">
+            <h3>Diseno &amp; UX</h3>
             <p>
               Prototipo interfaces en Figma buscando experiencias fluidas e intuitivas.
               Creo que el buen software empieza por entender al usuario.
@@ -153,11 +184,11 @@ export default function About() {
       </section>
 
       {/* Experiencia */}
-      <section className="about-section">
+      <section className="about-section anim">
         <h2>Experiencia Profesional</h2>
         <div className="timeline">
-          {experience.map((exp) => (
-            <div className="timeline-item" key={exp.role + exp.company}>
+          {experience.map((exp, i) => (
+            <div className={`timeline-item anim anim-left anim-d${i + 1}`} key={exp.role + exp.company}>
               <div className="timeline-dot" />
               <div className="timeline-content">
                 <div className="timeline-header">
@@ -168,8 +199,8 @@ export default function About() {
                   <span className="timeline-period">{exp.period}</span>
                 </div>
                 <ul className="timeline-list">
-                  {exp.items.map((item, i) => (
-                    <li key={i}>{item}</li>
+                  {exp.items.map((item, j) => (
+                    <li key={j}>{item}</li>
                   ))}
                 </ul>
               </div>
@@ -179,11 +210,11 @@ export default function About() {
       </section>
 
       {/* Educacion */}
-      <section className="about-section">
+      <section className="about-section anim">
         <h2>Educacion</h2>
         <div className="education-grid">
-          {education.map((edu) => (
-            <div className="education-card" key={edu.school}>
+          {education.map((edu, i) => (
+            <div className={`education-card anim anim-d${i + 1}`} key={edu.school}>
               <h3>{edu.school}</h3>
               <p>{edu.degree}</p>
               <span>{edu.period}</span>
@@ -193,11 +224,11 @@ export default function About() {
       </section>
 
       {/* Skills */}
-      <section className="about-section skills-section">
+      <section className="about-section skills-section anim">
         <h2>Lenguajes &amp; Herramientas</h2>
         <div className="skills-groups">
-          {skillGroups.map((group) => (
-            <div className="skill-group" key={group.label}>
+          {skillGroups.map((group, i) => (
+            <div className={`skill-group anim anim-d${i + 1}`} key={group.label}>
               <h4>{group.label}</h4>
               <div className="skill-icons">
                 {group.icons.map((icon) => (

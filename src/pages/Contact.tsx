@@ -1,3 +1,4 @@
+import { useScrollAnimate } from '../hooks/useScrollAnimate'
 import './Contact.css'
 
 function EmailIcon() {
@@ -52,9 +53,11 @@ const socials = [
 ]
 
 export default function Contact() {
+  const containerRef = useScrollAnimate<HTMLElement>()
+
   return (
-    <main>
-      <section className="contact-hero">
+    <main ref={containerRef}>
+      <section className="contact-hero anim">
         <h1>Trabajemos juntos</h1>
         <p>
           Tienes un proyecto en mente o simplemente quieres conectar? Estoy abierto a
@@ -63,13 +66,13 @@ export default function Contact() {
       </section>
 
       <section className="contact-methods">
-        {contactMethods.map((method) => (
+        {contactMethods.map((method, i) => (
           <a
             key={method.title}
             href={method.href}
             target="_blank"
             rel="noreferrer"
-            className="contact-card"
+            className={`contact-card anim anim-scale anim-d${i + 1}`}
           >
             <div className="contact-card-icon">{method.icon}</div>
             <h3>{method.title}</h3>
@@ -78,7 +81,7 @@ export default function Contact() {
         ))}
       </section>
 
-      <section className="contact-socials">
+      <section className="contact-socials anim anim-d4">
         <h2>Encuentrame en</h2>
         <div className="social-links">
           {socials.map((s) => (

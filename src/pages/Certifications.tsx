@@ -1,3 +1,4 @@
+import { useScrollAnimate } from '../hooks/useScrollAnimate'
 import './Certifications.css'
 
 interface Cert {
@@ -79,15 +80,17 @@ const categories: Category[] = [
 ]
 
 export default function Certifications() {
+  const containerRef = useScrollAnimate<HTMLElement>()
+
   return (
-    <main>
-      <h1 className="titulo">Certificaciones</h1>
+    <main ref={containerRef}>
+      <h1 className="titulo anim">Certificaciones</h1>
       {categories.map((cat) => (
-        <section className="categoria-section" key={cat.name}>
+        <section className="categoria-section anim" key={cat.name}>
           <h2 className="categoria-titulo">{cat.name}</h2>
           <div className="certificados-grid">
             {cat.certs.map((cert, i) => (
-              <div className="certificado-card" key={i}>
+              <div className={`certificado-card anim anim-scale anim-d${Math.min(i + 1, 8)}`} key={i}>
                 <img src={cert.img} alt={`Insignia de ${cert.title}`} />
                 <div className="card-content">
                   <h3>{cert.title}</h3>
